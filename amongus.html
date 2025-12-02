@@ -29,7 +29,6 @@
             border-radius: 6px;
         }
 
-        /* Kolory nagłówków i obramowań */
         .crewmate h2 { color: #00d9ff; }
         .crewmate { border-left-color: #00d9ff; }
 
@@ -44,7 +43,7 @@
 
         .role-list {
             margin-top: 15px;
-            padding-left: 20px;
+            padding-left: 22px;
         }
 
         .role-list li {
@@ -56,65 +55,94 @@
 <body>
     <h1>Role w Modowanym Among Us</h1>
 
+    <!-- CREWMATE -->
     <div class="section crewmate">
-        <h2>Crewmate</h2>
+        <h2>Crewmate (<span class="count"></span>)</h2>
         <ul class="role-list">
-            <p>Mayor</p>
-            <p>Sheriff</p>
-            <p>Prosecutor</p>
-            <p>Investigator</p>
-            <p>Transporter</p>
-            <p>Spy</p>
-            <p>Snitch</p>
-            <p>Altruist</p>
-            <p>Mystic</p>
-            <p>Medic</p>
-            <p>Trapper</p>
-            <p>Detective</p>
-            <p>Engineer</p>
-            <p>Security</p>
-            <p>Tracker</p>
-            <p>Time Lord</p>
-            <p>Seer</p>
-            <p>Swapper</p>
+            <li>Altruist</li>
+            <li>Aurial</li>
+            <li>Cleric</li>
+            <li>Detective</li>
+            <li>Engineer</li>
+            <li>Imitator</li>
+            <li>Investigator</li>
+            <li>Jailor</li>
+            <li>Lookout</li>
+            <li>Mayor</li>
+            <li>Medic</li>
+            <li>Medium</li>
+            <li>Mystic</li>
+            <li>Plumber</li>
+            <li>Prosecutor</li>
+            <li>Security</li>
+            <li>Seer</li>
+            <li>Sheriff</li>
+            <li>Snitch</li>
+            <li>Spy</li>
+            <li>Swapper</li>
+            <li>Time Lord</li>
+            <li>Tracker</li>
+            <li>Trapper</li>
+            <li>Transporter</li>
+            <li>Veteran</li>
+            <li>Vigilante</li>
         </ul>
     </div>
 
+    <!-- IMPOSTOR -->
     <div class="section impostor">
-        <h2>Impostor</h2>
+        <h2>Impostor (<span class="count"></span>)</h2>
         <ul class="role-list">
-            <p>Swooper</p>
-            <p>Warlock</p>
-            <p>Miner</p>
-            <p>Janitor</p>
-            <p>Poisoner</p>
-            <p>Blackmailer</p>
+            <li>Blackmailer</li>
+            <li>Bomber</li>
+            <li>Escapist</li>
+            <li>Hypnotist</li>
+            <li>Miner</li>
+            <li>Musketeer</li>
+            <li>Poisoner</li>
+            <li>Scavenger</li>
+            <li>Swooper</li>
+            <li>Undertaker</li>
+            <li>Warlock</li>
         </ul>
     </div>
 
+    <!-- NEUTRAL -->
     <div class="section neutral">
-        <h2>Neutral</h2>
+        <h2>Neutral (<span class="count"></span>)</h2>
         <ul class="role-list">
-            <p>Jester</p>
-            <p>Executioner</p>
-            <p>Glitch</p>
-            <P>Werewolf</P>
-            <p>Amnesiac</p>
-            <p>Guardian Angel</p>
+            <li>Amnesiac</li>
+            <li>Executioner</li>
+            <li>Glitch</li>
+            <li>Guardian Angel</li>
+            <li>Jester</li>
+            <li>Pelican</li>
+            <li>Werewolf</li>
         </ul>
     </div>
 
+    <!-- MODIFIERS -->
     <div class="section mods">
-        <h2>Modyfikatory</h2>
+        <h2>Modyfikatory (<span class="count"></span>)</h2>
         <ul class="role-list">
-            <p>Lovers</p>
-            <p>Double Shot</p>
-            <p>Bait</p>
-            <p>Disperser</p>
-            <p>Tiebreaker</p>
-            <p>Giant</p>
+            <li>Bait</li>
+            <li>Disperser</li>
+            <li>Double Shot</li>
+            <li>Giant</li>
+            <li>Lovers</li>
+            <li>Tiebreaker</li>
         </ul>
     </div>
+
+    <!-- SKRYPT AUTOMATYCZNE LICZENIE -->
+    <script>
+        document.querySelectorAll(".section").forEach(section => {
+            const count = section.querySelectorAll("li").length;
+            const span = section.querySelector("h2 .count");
+            if (span) span.textContent = count;
+        });
+    </script>
 
 </body>
 </html>
+
